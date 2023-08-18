@@ -1,0 +1,34 @@
+﻿@model DersModelYapisi.Views.ViewModels.CardProductViewModel
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Sum (With Tax)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.products)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Product.Name</td>
+                <td>@item.price</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Quantity * item.price * 1.20M)</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td><b>Sum</b></td>
+            <td>@ViewBag.ToplamKDV</td>
+            <td>@ViewBag.ToplamTutar</td>
+        </tr>
+    </tfoot>
+</table>
