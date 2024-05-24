@@ -18,6 +18,16 @@ namespace DersModelYapisi.Controllers
             return View();
         }
 
+        public IActionResult Malatya()
+        {
+            return View();
+        }
+        
+        public IActionResult Antalya()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
